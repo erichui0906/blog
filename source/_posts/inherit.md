@@ -9,7 +9,7 @@ tags: [javascript,es6]
 #### 一 原型继承
 
 ```js
-let Super = functioin(name) {
+let Super = function(name) {
 	this.name = name;
 	this.setName = (newName) => {
 		this.name = name;
@@ -23,6 +23,7 @@ let Sub = function(sex) {
 	this.sex = sex;
 }
 Sub.prototype = new Super('eric');  //通过改变原型对象实现继承
+Sub.prototype.constructor = Sub;
 let sub1 = new Sub('male')
 	 sub2 = new Sub('female');
 
